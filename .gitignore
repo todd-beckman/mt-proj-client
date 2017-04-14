@@ -5,3 +5,4 @@ pubspec.lock
 !/*/packages
 web/css/packages
 web/packages
+build/

@@ -1,0 +1,16 @@
+@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
+body{
+    font-family: 'Slabo 27px', serif;
+    color: #ddd;
+    background-color: #111;
+}
+a:link, a:active, a:visited{
+    color: #ddd;
+}
+a:hover{
+    color:#fcc;
+}
+
+#navbar {
+  
+}
