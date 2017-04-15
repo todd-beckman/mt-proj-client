@@ -11,6 +11,9 @@ a:hover{
     color:#fcc;
 }
 
-#navbar {
-  
+.home {
+  margin: auto;
+  width: 800px;
+  height: 100%;
+  background-color: white;
 }
