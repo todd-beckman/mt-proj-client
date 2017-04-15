@@ -3,6 +3,7 @@ body{
     font-family: 'Slabo 27px', serif;
     color: #ddd;
     background-color: #111;
+    height: 100%;
 }
 a:link, a:active, a:visited{
     color: #ddd;
@@ -14,6 +15,10 @@ a:hover{
 .home {
   margin: auto;
   width: 800px;
+  height: 100%;
+}
+
+.homebody{
   height: 100%;
   background-color: white;
 }

@@ -21,10 +21,20 @@ class HomeComponent extends FluxUiComponent<HomeProps> {
 
   @override
   ReactElement render() {
-    return (Dom.div()
-      ..className = 'home'
-      ..style = {
-        "color": props.color.toCssString(),
-      })(props.store.html);
+    return (Dom.div()..className = 'home')(
+      _renderButton(),
+      _renderBody(),
+    );
   }
+
+  ReactElement _renderButton() => Dom.div()(
+        (Dom.button()
+          ..className = 'loadbutton'
+          ..onClick = (_) => props.actions.loadDocument())(
+          'Load Document',
+        ),
+      );
+  ReactElement _renderBody() => (Dom.div()..className = 'homebody')(
+        props.store.html,
+      );
 }

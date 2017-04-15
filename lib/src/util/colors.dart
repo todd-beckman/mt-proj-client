@@ -8,6 +8,6 @@ class MTColor {
 
   String toCssString() => _color.toHexColor().toCssString();
 
-  /// The color red
+  static final MTColor BLACK = new MTColor(new Color.hex('#000000'));
   static final MTColor RED = new MTColor(new Color.hex('#B02020'));
 }

@@ -35,6 +35,8 @@ class HomeStore extends Store {
 
   Future load() async {
     _fetchData();
+
+    manageActionSubscription(_actions.loadDocument.listen(_loadDocument));
   }
 
   void _refresh() {
@@ -55,5 +57,9 @@ class HomeStore extends Store {
     _isLoaded = true;
     _events.onLoaded(_html, _dispatchKey);
     trigger();
+  }
+
+  _loadDocument(_) {
+    _fetchData();
   }
 }
