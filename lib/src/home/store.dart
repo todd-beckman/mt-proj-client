@@ -31,7 +31,6 @@ class HomeStore extends Store {
     });
 
     _refresh();
-    _html = '<p>some fancy stuff</p>';
   }
 
   Future load() async {

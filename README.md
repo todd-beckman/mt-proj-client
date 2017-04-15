@@ -10,4 +10,5 @@ This might not go anywhere
 
 ### Local
 
+- Set up the rest of the stack via [mt-proj-server](https://github.com/todd-beckman/mt-proj-server)
 - `pub serve`
