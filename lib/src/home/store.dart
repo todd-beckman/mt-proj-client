@@ -36,7 +36,10 @@ class HomeStore extends Store {
   Future load() async {
     _fetchData();
 
-    manageActionSubscription(_actions.loadDocument.listen(_loadDocument));
+    [
+      _actions.loadDocument.listen(_loadDocument),
+      _actions.sendDocument.listen(_sendDocument),
+    ].forEach(manageActionSubscription);
   }
 
   void _refresh() {
@@ -49,17 +52,33 @@ class HomeStore extends Store {
     try {
       payload = await _messenger.fetchData();
     } catch (e) {
-      print('oops');
       print(e);
       return;
     }
     _html = payload;
     _isLoaded = true;
-    _events.onLoaded(_html, _dispatchKey);
+    _events.onFetchedDocument(_html, _dispatchKey);
     trigger();
   }
 
   _loadDocument(_) {
     _fetchData();
+  }
+
+  Future _sendDocument(_) async {
+    bool success;
+    try {
+      success = await _messenger.putData(_html);
+    } catch (e) {
+      print(e);
+      return;
+    }
+
+    if (!success) {
+      print('send failed');
+    } else {
+      _events.onSentDocument(true, _dispatchKey);
+      trigger();
+    }
   }
 }

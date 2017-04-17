@@ -21,19 +21,34 @@ class HomeComponent extends FluxUiComponent<HomeProps> {
 
   @override
   ReactElement render() {
+    if (!props.store.isLoaded) {
+      return (Dom.div()..className = 'homeloading')(
+        Dom.p()('Loading...'),
+      );
+    }
     return (Dom.div()..className = 'home')(
-      _renderButton(),
+      _renderGetButton(),
+      _renderPostButton(),
       _renderBody(),
     );
   }
 
-  ReactElement _renderButton() => Dom.div()(
+  ReactElement _renderGetButton() => Dom.div()(
         (Dom.button()
-          ..className = 'loadbutton'
+          ..className = 'getbutton'
           ..onClick = (_) => props.actions.loadDocument())(
           'Load Document',
         ),
       );
+
+  ReactElement _renderPostButton() => Dom.div()(
+        (Dom.button()
+          ..className = 'postbutton'
+          ..onClick = (_) => props.actions.sendDocument())(
+          'Send Document',
+        ),
+      );
+
   ReactElement _renderBody() => (Dom.div()..className = 'homebody')(
         props.store.html,
       );

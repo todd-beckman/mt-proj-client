@@ -1,13 +1,16 @@
 part of mtproj.home;
 
 class HomeEvents extends EventsCollection {
-  final Event onLoaded;
+  final Event onFetchedDocument;
+  final Event onSentDocument;
 
   HomeEvents(DispatchKey dispatchKey)
       : super(dispatchKey),
-        onLoaded = new Event(dispatchKey) {
+        onFetchedDocument = new Event(dispatchKey),
+        onSentDocument = new Event(dispatchKey) {
     [
-      onLoaded,
+      onFetchedDocument,
+      onSentDocument,
     ].forEach(manageEvent);
   }
 }

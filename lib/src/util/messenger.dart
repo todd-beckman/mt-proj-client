@@ -14,12 +14,30 @@ class Messenger extends Disposable {
   Future<String> fetchData() async {
     Completer<String> c = new Completer();
 
-    _client.read(endpoint).then((content) {
+    var url = '$endpoint/get';
+
+    _client.read(url).then((content) {
       print(content);
       c.complete(content);
     }).catchError((e) {
       print(e);
       c.complete(null);
+    });
+
+    return c.future;
+  }
+
+  Future<bool> putData(String data) async {
+    Completer<bool> c = new Completer();
+
+    var url = '$endpoint/post';
+
+    _client.post(url).then((response) {
+      print(response.body);
+      c.complete(true);
+    }).catchError((e) {
+      print(e);
+      c.complete(false);
     });
 
     return c.future;
