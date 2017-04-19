@@ -1,15 +1,15 @@
 part of mtproj.editor;
 
 class EditorEvents extends EventsCollection {
-  final Event onFetchedDocument;
+  final Event onDocumentLoaded;
   final Event onSentDocument;
 
   EditorEvents(DispatchKey dispatchKey)
       : super(dispatchKey),
-        onFetchedDocument = new Event(dispatchKey),
+        onDocumentLoaded = new Event(dispatchKey),
         onSentDocument = new Event(dispatchKey) {
     [
-      onFetchedDocument,
+      onDocumentLoaded,
       onSentDocument,
     ].forEach(manageEvent);
   }

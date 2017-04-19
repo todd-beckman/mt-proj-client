@@ -18,10 +18,10 @@ class EditorStore extends Store {
 
   EditorStore({
     @required EditorActions actions,
-    @required EditorEvents events,
+    @required AppContext this.appContext,
     @required DispatchKey dispatchKey,
     @required String this.docId,
-    @required AppContext this.appContext,
+    @required EditorEvents events,
   })
       : _actions = actions,
         _dispatchKey = dispatchKey,
@@ -29,8 +29,8 @@ class EditorStore extends Store {
     _messenger = new EditorMessenger(appContext.environment);
     manageDisposable(_messenger);
     didDispose.then((_) {
-      actions = null;
-      events = null;
+      _actions = null;
+      _events = null;
       _messenger = null;
       _html = null;
     });
@@ -62,7 +62,7 @@ class EditorStore extends Store {
     }
     _html = payload;
     _isLoaded = true;
-    _events.onFetchedDocument(docId, _dispatchKey);
+    _events.onDocumentLoaded(docId, _dispatchKey);
     trigger();
   }
 

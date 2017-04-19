@@ -1,5 +1,6 @@
 part of mtproj.editor;
 
+/// This [Module] is responsible for the document editor.
 class EditorModule extends Module {
   DispatchKey _dispatchKey = new DispatchKey('home module');
 
