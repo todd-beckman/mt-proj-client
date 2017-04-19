@@ -1,4 +1,4 @@
-library mtproj.home;
+library mtproj.editor;
 
 import 'dart:async';
 
@@ -13,9 +13,9 @@ import 'util/colors.dart';
 import 'util/messenger.dart';
 import 'util/urls.dart';
 
-part 'home/actions.dart';
-part 'home/events.dart';
-part 'home/module.dart';
-part 'home/store.dart';
+part 'editor/actions.dart';
+part 'editor/events.dart';
+part 'editor/module.dart';
+part 'editor/store.dart';
 
-part 'home/components/home_content.dart';
+part 'editor/components/editor_content.dart';

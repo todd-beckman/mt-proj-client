@@ -1,9 +1,9 @@
-part of mtproj.home;
+part of mtproj.editor;
 
-class HomeStore extends Store {
-  HomeActions _actions;
+class EditorStore extends Store {
+  EditorActions _actions;
   DispatchKey _dispatchKey;
-  HomeEvents _events;
+  EditorEvents _events;
 
   Messenger _messenger;
 
@@ -13,9 +13,9 @@ class HomeStore extends Store {
   String get html => _html;
   String _html;
 
-  HomeStore({
-    @required HomeActions actions,
-    @required HomeEvents events,
+  EditorStore({
+    @required EditorActions actions,
+    @required EditorEvents events,
     @required DispatchKey dispatchKey,
   })
       : _actions = actions,

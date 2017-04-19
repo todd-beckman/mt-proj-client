@@ -9,7 +9,7 @@ import 'package:mtproj/mtproj.dart';
 main() {
   react_client.setClientConfiguration();
 
-  var home = new HomeModule();
+  var home = new EditorModule();
   home.load().then((_) {
     react_dom.render(home.components.content(), querySelector('#body'));
   });

@@ -1,10 +1,10 @@
-part of mtproj.home;
+part of mtproj.editor;
 
-class HomeEvents extends EventsCollection {
+class EditorEvents extends EventsCollection {
   final Event onFetchedDocument;
   final Event onSentDocument;
 
-  HomeEvents(DispatchKey dispatchKey)
+  EditorEvents(DispatchKey dispatchKey)
       : super(dispatchKey),
         onFetchedDocument = new Event(dispatchKey),
         onSentDocument = new Event(dispatchKey) {

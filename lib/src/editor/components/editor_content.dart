@@ -1,18 +1,18 @@
-part of mtproj.home;
+part of mtproj.editor;
 
 /// The "Homepage" of MT.
 ///
 /// Its contents will likely differ drastically for ease of development.
 @Factory()
-UiFactory<HomeProps> Home;
+UiFactory<EditorProps> Editor;
 
 @Props()
-class HomeProps extends FluxUiProps<HomeActions, HomeStore> {
+class EditorProps extends FluxUiProps<EditorActions, EditorStore> {
   MTColor color;
 }
 
 @Component()
-class HomeComponent extends FluxUiComponent<HomeProps> {
+class EditorComponent extends FluxUiComponent<EditorProps> {
   @override
   void componentDidMount() {
     props.actions.loadDocument();
@@ -22,11 +22,11 @@ class HomeComponent extends FluxUiComponent<HomeProps> {
   @override
   ReactElement render() {
     if (!props.store.isLoaded) {
-      return (Dom.div()..className = 'homeloading')(
+      return (Dom.div()..className = 'editorloading')(
         Dom.p()('Loading...'),
       );
     }
-    return (Dom.div()..className = 'home')(
+    return (Dom.div()..className = 'editor')(
       _renderGetButton(),
       _renderPostButton(),
       _renderBody(),
@@ -49,7 +49,7 @@ class HomeComponent extends FluxUiComponent<HomeProps> {
         ),
       );
 
-  ReactElement _renderBody() => (Dom.div()..className = 'homebody')(
+  ReactElement _renderBody() => (Dom.div()..className = 'editorbody')(
         props.store.html,
       );
 }

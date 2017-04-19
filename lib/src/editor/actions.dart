@@ -1,10 +1,10 @@
-part of mtproj.home;
+part of mtproj.editor;
 
-class HomeActions extends Disposable {
+class EditorActions extends Disposable {
   Action loadDocument = new Action();
   Action sendDocument = new Action();
 
-  HomeActions() {
+  EditorActions() {
     [
       loadDocument,
       sendDocument,
