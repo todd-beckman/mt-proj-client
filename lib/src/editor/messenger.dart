@@ -1,20 +1,22 @@
-import 'dart:async';
-import 'dart:core';
+part of mtproj.editor;
 
-import 'package:http/browser_client.dart' as http;
-import 'package:w_common/w_common.dart';
-
-class Messenger extends Disposable {
+/// A class used to interface between the editor and the document server.
+class EditorMessenger extends Disposable {
   http.BrowserClient _client;
-  final String endpoint;
-  Messenger(String this.endpoint) {
+
+  /// The root URL of the document server
+  String get docServer => _docServer;
+  String _docServer;
+
+  EditorMessenger(Environment environment) {
     _client = new http.BrowserClient();
+    _docServer = environment.docServer;
   }
 
-  Future<String> fetchData() async {
+  Future<String> fetchData(String docId) async {
     Completer<String> c = new Completer();
 
-    var url = '$endpoint/get';
+    var url = getDocUrl(docServer, docId);
 
     _client.read(url).then((content) {
       print(content);
@@ -27,10 +29,10 @@ class Messenger extends Disposable {
     return c.future;
   }
 
-  Future<bool> putData(String data) async {
+  Future<bool> putData(String docId, String data) async {
     Completer<bool> c = new Completer();
 
-    var url = '$endpoint/post';
+    var url = postDocUrl(docServer, docId);
 
     _client.post(url).then((response) {
       print(response.body);

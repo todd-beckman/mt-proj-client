@@ -13,7 +13,10 @@ class EditorModule extends Module {
 
   EditorStore _store;
 
-  EditorModule() {
+  EditorModule({
+    @required AppContext appContext,
+    @required String docId,
+  }) {
     _actions = new EditorActions();
     _events = new EditorEvents(_dispatchKey);
 
@@ -21,6 +24,8 @@ class EditorModule extends Module {
       actions: _actions,
       events: _events,
       dispatchKey: _dispatchKey,
+      docId: docId,
+      appContext: appContext,
     );
 
     _components = new EditorComponents(

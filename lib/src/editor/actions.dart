@@ -1,13 +1,13 @@
 part of mtproj.editor;
 
 class EditorActions extends Disposable {
-  Action loadDocument = new Action();
-  Action sendDocument = new Action();
+  Action<String> loadDocument = new Action<String>();
+  Action saveDocument = new Action();
 
   EditorActions() {
     [
       loadDocument,
-      sendDocument,
+      saveDocument,
     ].forEach(manageDisposable);
   }
 }

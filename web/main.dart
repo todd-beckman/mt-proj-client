@@ -9,7 +9,14 @@ import 'package:mtproj/mtproj.dart';
 main() {
   react_client.setClientConfiguration();
 
-  var home = new EditorModule();
+  var appContext = new AppContext(
+    environment: Environment.LOCAL,
+  );
+
+  var home = new EditorModule(
+    docId: '1',
+    appContext: appContext,
+  );
   home.load().then((_) {
     react_dom.render(home.components.content(), querySelector('#body'));
   });

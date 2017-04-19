@@ -5,7 +5,10 @@ class EditorStore extends Store {
   DispatchKey _dispatchKey;
   EditorEvents _events;
 
-  Messenger _messenger;
+  final String docId;
+  final AppContext appContext;
+
+  EditorMessenger _messenger;
 
   bool get isLoaded => _isLoaded;
   bool _isLoaded;
@@ -17,11 +20,13 @@ class EditorStore extends Store {
     @required EditorActions actions,
     @required EditorEvents events,
     @required DispatchKey dispatchKey,
+    @required String this.docId,
+    @required AppContext this.appContext,
   })
       : _actions = actions,
         _dispatchKey = dispatchKey,
         _events = events {
-    _messenger = new Messenger(MTUrls.LOCAL);
+    _messenger = new EditorMessenger(appContext.environment);
     manageDisposable(_messenger);
     didDispose.then((_) {
       actions = null;
@@ -37,8 +42,8 @@ class EditorStore extends Store {
     _fetchData();
 
     [
-      _actions.loadDocument.listen(_loadDocument),
-      _actions.sendDocument.listen(_sendDocument),
+      _actions.loadDocument.listen((_) => _fetchData),
+      _actions.saveDocument.listen((_) => _sendDocument),
     ].forEach(manageActionSubscription);
   }
 
@@ -50,25 +55,21 @@ class EditorStore extends Store {
   Future _fetchData() async {
     String payload;
     try {
-      payload = await _messenger.fetchData();
+      payload = await _messenger.fetchData(docId);
     } catch (e) {
       print(e);
       return;
     }
     _html = payload;
     _isLoaded = true;
-    _events.onFetchedDocument(_html, _dispatchKey);
+    _events.onFetchedDocument(docId, _dispatchKey);
     trigger();
-  }
-
-  _loadDocument(_) {
-    _fetchData();
   }
 
   Future _sendDocument(_) async {
     bool success;
     try {
-      success = await _messenger.putData(_html);
+      success = await _messenger.putData(docId, _html);
     } catch (e) {
       print(e);
       return;

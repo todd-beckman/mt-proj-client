@@ -44,7 +44,7 @@ class EditorComponent extends FluxUiComponent<EditorProps> {
   ReactElement _renderPostButton() => Dom.div()(
         (Dom.button()
           ..className = 'postbutton'
-          ..onClick = (_) => props.actions.sendDocument())(
+          ..onClick = (_) => props.actions.saveDocument())(
           'Send Document',
         ),
       );
