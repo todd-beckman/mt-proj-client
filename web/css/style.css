@@ -8,43 +8,56 @@
   display: flex;
   flex-flow: column nowrap; }
 
+/*  Lectern top bar
+    1. Pulls right
+    2. Flexible width with minimum sizing
+ */
 .lectern__top-bar {
   align-self: flex-end;
   margin-left: auto;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
   max-width: 600px;
   width: 40%;
-  min-width: 300px;
-  flex-wrap: nowrap;
-  justify-content: flex-end; }
+  min-width: 300px; }
 
+/*  Lectern top-bar-item
+    1. Items are the same size
+ */
 .lectern__top-bar-item {
   flex-grow: 2;
   flex-basis: 0; }
 
+/*  Lectern button
+    1. Border the same color as the button background
+    2. Button fills the whole top-bar-item container
+    3. Focus draws a border not an outline
+ */
 .lectern__top-bar-button {
-  background-color: #AAA;
-  border: solid 3px #AAA;
-  margin: 0;
   padding: 5px 2px 5px 2px;
+  background-color: #BBB;
+  border: solid 3px #BBB;
+  margin: 0;
   display: inline;
   width: 100%;
   outline: none; }
   .lectern__top-bar-button:hover {
-    background-color: #999;
-    border-color: #999; }
+    background-color: #C0C0C0;
+    border-color: #C0C0C0; }
   .lectern__top-bar-button:disabled {
     color: #666;
+    background-color: #DDD;
+    border-color: #DDD; }
+  .lectern__top-bar-button:active {
     background-color: #CCC;
     border-color: #CCC; }
-  .lectern__top-bar-button:active {
-    background-color: #BBB;
-    border-color: #BBB; }
   .lectern__top-bar-button:focus {
-    border-color: #0AA; }
+    border-color: #8AA; }
 
 body {
   font-family: "Slabo 27px", serif;
   color: #000;
+  background-color: #CCC;
   font-size: 14pt;
   height: 100%;
   margin: 0;

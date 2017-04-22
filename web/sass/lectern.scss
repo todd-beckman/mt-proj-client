@@ -1,43 +1,71 @@
 @import 'const';
 
+
+/*  Lectern top bar
+    1. Pulls right
+    2. Flexible width with minimum sizing
+ */
 .lectern__top-bar {
+  // 1
   align-self: flex-end;
   margin-left: auto;
+  justify-content: flex-end;
+
+  // 2
+  flex-wrap: nowrap;
   max-width: 600px;
   width: 40%;
   min-width: 300px;
-  flex-wrap: nowrap;
-  justify-content: flex-end;
 }
 
+/*  Lectern top-bar-item
+    1. Items are the same size
+ */
 .lectern__top-bar-item {
+  // 1
   flex-grow: 2;
   flex-basis: 0;
 }
 
+/*  Lectern button
+    1. Border the same color as the button background
+    2. Button fills the whole top-bar-item container
+    3. Focus draws a border not an outline
+ */
 .lectern__top-bar-button {
+  padding: 5px 2px 5px 2px;
+
+  // 1
   background-color: $button-bg-primary;
   border: solid 3px $button-bg-primary;
+
+  // 2
   margin: 0;
-  padding: 5px 2px 5px 2px;
   display: inline;
   width: 100%;
+
+  // 3
   outline: none;
 
   &:hover {
+    // 1
     background-color: $button-bg-hover;
     border-color: $button-bg-hover;
   }
   &:disabled {
     color: $color-disabled;
+
+    // 1
     background-color: $button-bg-disabled;
     border-color: $button-bg-disabled;
   }
   &:active {
+    // 1
     background-color: $button-bg-active;
     border-color: $button-bg-active;
   }
   &:focus{
-    border-color: #0AA;
+    // 3
+    border-color: $button-focus;
   }
 }

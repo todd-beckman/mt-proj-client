@@ -2,10 +2,16 @@
 @import 'flexbox';
 @import 'lectern';
 
+/*  Body
+    1. Wrap the site into one page without scrolling
+ */
 body{
   font-family: "Slabo 27px", serif;
   color: $color-primary;
+  background-color: $background;
   font-size: 14pt;
+
+  // 1
   height: 100%;
   margin: 0;
   padding: 0;

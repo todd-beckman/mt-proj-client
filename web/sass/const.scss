@@ -1,10 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Slabo+27px);
 
+// The body background
+$background: #CCC;
+
+// Text styling
 $color-primary: #000;
 $color-disabled: #666;
 
-
-$button-bg-primary: #AAA;
-$button-bg-active: #BBB;
-$button-bg-disabled: #CCC;
-$button-bg-hover: #999;
+// Button styling
+$button-bg-primary: #BBB;
+$button-bg-active: #CCC;
+$button-bg-disabled: #DDD;
+$button-bg-hover: #C0C0C0;
+$button-focus: #8AA;
