@@ -16,7 +16,8 @@ class EditorMessenger extends Disposable {
   Future<String> fetchData(String docId) async {
     Completer<String> c = new Completer();
 
-    var url = getDocUrl(docServer, docId);
+    var encodedDocId = encodeBase64ForUrl(docId);
+    var url = getDocUrl(docServer, encodedDocId);
 
     _client.read(url).then((content) {
       print(content);
@@ -32,7 +33,8 @@ class EditorMessenger extends Disposable {
   Future<bool> putData(String docId, String data) async {
     Completer<bool> c = new Completer();
 
-    var url = postDocUrl(docServer, docId);
+    var encodedDocId = encodeBase64ForUrl(docId);
+    var url = postDocUrl(docServer, encodedDocId);
 
     _client.post(url).then((response) {
       print(response.body);

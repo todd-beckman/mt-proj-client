@@ -7,6 +7,9 @@ class LecternStore extends Store {
 
   final AppContext appContext;
 
+  EditorModule _editor;
+  ReactElement get editorContent => _editor.components.content();
+
   LecternStore({
     @required LecternActions actions,
     @required AppContext this.appContext,
@@ -19,10 +22,17 @@ class LecternStore extends Store {
     didDispose.then((_) {
       _actions = null;
       _events = null;
+      _editor = null;
     });
+
+    _editor = new EditorModule(
+      appContext: appContext,
+      docId: 'an-enigmatic-doc',
+    );
   }
 
   Future load() async {
+    await _editor.load();
     print('loaded');
   }
 }

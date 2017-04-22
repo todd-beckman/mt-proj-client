@@ -6,6 +6,9 @@ class LecternModule extends Module {
 
   LecternActions _actions;
 
+  LecternApi get api => _api;
+  LecternApi _api;
+
   LecternComponents get components => _components;
   LecternComponents _components;
 
@@ -31,6 +34,8 @@ class LecternModule extends Module {
       actions: _actions,
       store: _store,
     );
+
+    _api = new LecternApi(_actions);
   }
 
   @override

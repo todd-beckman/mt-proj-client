@@ -1,7 +1,6 @@
 library mtproj.lectern;
 
 import 'dart:async';
-import 'dart:core';
 
 import 'package:meta/meta.dart' show required;
 import 'package:over_react/over_react.dart';
@@ -12,6 +11,7 @@ import 'package:w_flux/w_flux.dart';
 
 import 'app_context.dart';
 import 'flexbox.dart';
+import 'editor.dart';
 
 part 'lectern/actions.dart';
 part 'lectern/api.dart';
