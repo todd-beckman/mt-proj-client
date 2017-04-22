@@ -1,8 +1,10 @@
-pubspec.lock
-.pub/
+build/
 .packages
 /packages
 !/*/packages
+.pub/
+pubspec.lock
+.sass-cache/
 web/css/packages
 web/packages
-build/
+web/sass/packages

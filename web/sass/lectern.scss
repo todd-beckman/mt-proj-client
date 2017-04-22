@@ -1,0 +1,43 @@
+@import 'const';
+
+.lectern__top-bar {
+  align-self: flex-end;
+  margin-left: auto;
+  max-width: 600px;
+  width: 40%;
+  min-width: 300px;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}
+
+.lectern__top-bar-item {
+  flex-grow: 2;
+  flex-basis: 0;
+}
+
+.lectern__top-bar-button {
+  background-color: $button-bg-primary;
+  border: solid 3px $button-bg-primary;
+  margin: 0;
+  padding: 5px 2px 5px 2px;
+  display: inline;
+  width: 100%;
+  outline: none;
+
+  &:hover {
+    background-color: $button-bg-hover;
+    border-color: $button-bg-hover;
+  }
+  &:disabled {
+    color: $color-disabled;
+    background-color: $button-bg-disabled;
+    border-color: $button-bg-disabled;
+  }
+  &:active {
+    background-color: $button-bg-active;
+    border-color: $button-bg-active;
+  }
+  &:focus{
+    border-color: #0AA;
+  }
+}

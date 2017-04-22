@@ -7,7 +7,7 @@ class LecternStore extends Store {
 
   final AppContext appContext;
 
-  LecternStore.LecternStore({
+  LecternStore({
     @required LecternActions actions,
     @required AppContext this.appContext,
     @required DispatchKey dispatchKey,
@@ -22,5 +22,7 @@ class LecternStore extends Store {
     });
   }
 
-  Future load() async {}
+  Future load() async {
+    print('loaded');
+  }
 }

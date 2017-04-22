@@ -20,7 +20,7 @@ class LecternModule extends Module {
     _actions = new LecternActions();
     _events = new LecternEvents(_dispatchKey);
 
-    _store = new LecternStore.LecternStore(
+    _store = new LecternStore(
       actions: _actions,
       events: _events,
       dispatchKey: _dispatchKey,

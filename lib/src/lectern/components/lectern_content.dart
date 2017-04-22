@@ -12,5 +12,9 @@ class LecternProps extends FluxUiProps<LecternActions, LecternStore> {}
 @Component()
 class LecternComponent extends FluxUiComponent<LecternProps> {
   @override
-  ReactElement render() => Shell()();
+  ReactElement render() => (TopBar())(
+        (TopBarItem())('Some Link'),
+        (TopBarItem())('Another One'),
+        (TopBarItem())('Shtuff'),
+      );
 }

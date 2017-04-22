@@ -13,10 +13,11 @@ main() {
     environment: Environment.LOCAL,
   );
 
-  var home = new LecternModule(
+  var lectern = new LecternModule(
     appContext: appContext,
   );
-  home.load().then((_) {
-    react_dom.render(home.components.content(), querySelector('#body'));
+
+  lectern.load().then((_) {
+    react_dom.render(lectern.components.content(), querySelector('#body'));
   });
 }

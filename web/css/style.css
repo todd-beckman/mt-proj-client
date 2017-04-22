@@ -1,27 +1,60 @@
 @import url(https://fonts.googleapis.com/css?family=Slabo+27px);
-body{
-    font-family: 'Slabo 27px', serif;
-    background-color: #AAA;
-    height: 100%;
-}
-a:link, a:active, a:visited{
-    color: #ddd;
-}
-a:hover{
-    color:#fcc;
-}
-
-.editor {
-  margin: auto;
-  width: 800px;
-  height: 100%;
-}
-
-.editorbody{
-  padding: 10px 5px 10px 5px;
-  background-color: white;
-}
-
-.desk__container{
+@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
+.flexbox-container {
   display: flex;
-}
+  flex-flow: row nowrap; }
+
+.flexbox-container-vertical {
+  display: flex;
+  flex-flow: column nowrap; }
+
+.lectern__top-bar {
+  align-self: flex-end;
+  margin-left: auto;
+  max-width: 600px;
+  width: 40%;
+  min-width: 300px;
+  flex-wrap: nowrap;
+  justify-content: flex-end; }
+
+.lectern__top-bar-item {
+  flex-grow: 2;
+  flex-basis: 0; }
+
+.lectern__top-bar-button {
+  background-color: #AAA;
+  border: solid 3px #AAA;
+  margin: 0;
+  padding: 5px 2px 5px 2px;
+  display: inline;
+  width: 100%;
+  outline: none; }
+  .lectern__top-bar-button:hover {
+    background-color: #999;
+    border-color: #999; }
+  .lectern__top-bar-button:disabled {
+    color: #666;
+    background-color: #CCC;
+    border-color: #CCC; }
+  .lectern__top-bar-button:active {
+    background-color: #BBB;
+    border-color: #BBB; }
+  .lectern__top-bar-button:focus {
+    border-color: #0AA; }
+
+body {
+  font-family: "Slabo 27px", serif;
+  color: #000;
+  font-size: 14pt;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: none;
+  min-width: 800px; }
+
+a:link
+a:active
+a:visited {
+  color: #ddd; }
+a:hover {
+  color: #fcc; }

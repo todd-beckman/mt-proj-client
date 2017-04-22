@@ -11,6 +11,7 @@ import 'package:w_module/w_module.dart';
 import 'package:w_flux/w_flux.dart';
 
 import 'app_context.dart';
+import 'flexbox.dart';
 
 part 'lectern/actions.dart';
 part 'lectern/api.dart';
@@ -19,4 +20,5 @@ part 'lectern/module.dart';
 part 'lectern/store.dart';
 
 part 'lectern/components/lectern_content.dart';
-part 'lectern/components/shell.dart';
+part 'lectern/components/topbar/topbar.dart';
+part 'lectern/components/topbar/topbar_item.dart';

@@ -1,0 +1,25 @@
+@import 'const';
+@import 'flexbox';
+@import 'lectern';
+
+body{
+  font-family: "Slabo 27px", serif;
+  color: $color-primary;
+  font-size: 14pt;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: none;
+  min-width: 800px;
+}
+
+a {
+  &:link
+  &:active
+  &:visited{
+    color: #ddd;
+  }
+  &:hover{
+    color:#fcc;
+  }
+}
