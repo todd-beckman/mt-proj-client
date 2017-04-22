@@ -1,8 +1,5 @@
 part of mtproj.editor;
 
-/// The "Homepage" of MT.
-///
-/// Its contents will likely differ drastically for ease of development.
 @Factory()
 UiFactory<EditorProps> Editor;
 

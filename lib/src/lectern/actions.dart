@@ -1,9 +1,9 @@
-part of mtproj.desk;
+part of mtproj.lectern;
 
-class DeskActions extends Disposable {
+class LecternActions extends Disposable {
   Action<String> loadDocument = new Action<String>();
 
-  DeskActions() {
+  LecternActions() {
     [
       loadDocument,
     ].forEach(manageDisposable);

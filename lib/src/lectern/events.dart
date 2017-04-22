@@ -1,9 +1,9 @@
-part of mtproj.desk;
+part of mtproj.lectern;
 
-class DeskEvents extends EventsCollection {
+class LecternEvents extends EventsCollection {
   final Event onDocumentLoaded;
 
-  DeskEvents(DispatchKey dispatchKey)
+  LecternEvents(DispatchKey dispatchKey)
       : super(dispatchKey),
         onDocumentLoaded = new Event(dispatchKey) {
     [

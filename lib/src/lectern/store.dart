@@ -1,17 +1,17 @@
-part of mtproj.desk;
+part of mtproj.lectern;
 
-class DeskStore extends Store {
-  DeskActions _actions;
+class LecternStore extends Store {
+  LecternActions _actions;
   DispatchKey _dispatchKey;
-  DeskEvents _events;
+  LecternEvents _events;
 
   final AppContext appContext;
 
-  DeskStore({
-    @required DeskActions actions,
+  LecternStore.LecternStore({
+    @required LecternActions actions,
     @required AppContext this.appContext,
     @required DispatchKey dispatchKey,
-    @required DeskEvents events,
+    @required LecternEvents events,
   })
       : _actions = actions,
         _dispatchKey = dispatchKey,

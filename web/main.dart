@@ -13,8 +13,7 @@ main() {
     environment: Environment.LOCAL,
   );
 
-  var home = new EditorModule(
-    docId: '1',
+  var home = new LecternModule(
     appContext: appContext,
   );
   home.load().then((_) {
