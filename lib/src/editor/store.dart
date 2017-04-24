@@ -67,19 +67,15 @@ class EditorStore extends Store {
   }
 
   Future _sendDocument(_) async {
-    bool success;
     try {
-      success = await _messenger.putData(docId, _html);
+      var response = await _messenger.putData(docId, _html);
+      print(response);
     } catch (e) {
       print(e);
       return;
     }
 
-    if (!success) {
-      print('send failed');
-    } else {
-      _events.onSentDocument(true, _dispatchKey);
-      trigger();
-    }
+    _events.onSentDocument(true, _dispatchKey);
+    trigger();
   }
 }

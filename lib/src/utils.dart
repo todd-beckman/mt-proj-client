@@ -15,12 +15,6 @@ class MTColor {
   static final MTColor RED = new MTColor(color: new Color.hex('#B02020'));
 }
 
-/// Returns the URL to the GET endpoint on the doc server for documents
-String getDocUrl(String root, String docId) => '$root/doc/$docId';
-
-/// Returns the URL to the POST endpoint on the doc server for documents
-String postDocUrl(String root, String docId) => '$root/doc/$docId';
-
 String encodeBase64ForUrl(String input) {
   return UTF8.fuse(BASE64).encode(input).replaceAll('+', '-').replaceAll('/', '_').replaceAll('=', '~');
 }
