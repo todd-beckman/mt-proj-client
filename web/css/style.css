@@ -54,6 +54,9 @@
   .lectern__top-bar-button:focus {
     border-color: #8AA; }
 
+/*  Body
+    1. Wrap the site into one page without scrolling
+ */
 body {
   font-family: "Slabo 27px", serif;
   color: #000;
@@ -62,12 +65,10 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: none;
+  overflow: hidden;
   min-width: 800px; }
 
-a:link
-a:active
-a:visited {
+a:link, a:active, a:visited {
   color: #ddd; }
 a:hover {
   color: #fcc; }
