@@ -1,27 +1,25 @@
 part of mtproj.file_tree;
 
 @Factory()
-UiFactory<LecternProps> Lectern;
+UiFactory<FileTreeProps> FileTree;
 
 @Props()
-class LecternProps extends FluxUiProps<FileTreeActions, FileTreeStore> {}
+class FileTreeProps extends FluxUiProps<FileTreeActions, FileTreeStore> {}
 
 @Component()
-class LecternComponent extends FluxUiComponent<LecternProps> {
+class FileTreeComponent extends FluxUiComponent<FileTreeProps> {
   @override
-  ReactElement render() => (Dom.div()..className = 'ft-block')(
+  ReactElement render() => (Block()..className = 'ft-body')(
         (Dom.ul()..className = 'ft-list')(
           _renderItems(),
         ),
       );
 
-  ReactElement _renderItems() {
-    var list = props.store.files.map(
-      (File file) => (Dom.div()
-            ..key = file.id
-            ..className = 'ft-list__file')(
-            file.displayName,
-          ),
-    );
-  }
+  _renderItems() => props.store.files.map(
+        (File file) => (Dom.li()
+              ..key = file.id
+              ..className = 'ft-list__file')(
+              file.displayName,
+            ),
+      );
 }

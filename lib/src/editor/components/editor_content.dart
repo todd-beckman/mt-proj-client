@@ -19,11 +19,11 @@ class EditorComponent extends FluxUiComponent<EditorProps> {
   @override
   ReactElement render() {
     if (!props.store.isLoaded) {
-      return (Dom.div()..className = 'editorloading')(
+      return (Block()..className = 'et-body et-body--loading')(
         Dom.p()('Loading...'),
       );
     }
-    return (Dom.div()..className = 'editor')(
+    return (Block()..className = 'et-body')(
       _renderGetButton(),
       _renderPostButton(),
       _renderBody(),
@@ -32,7 +32,7 @@ class EditorComponent extends FluxUiComponent<EditorProps> {
 
   ReactElement _renderGetButton() => Dom.div()(
         (Dom.button()
-          ..className = 'getbutton'
+          ..className = 'et-body__load-button'
           ..onClick = (_) => props.actions.loadDocument())(
           'Load Document',
         ),
@@ -40,13 +40,13 @@ class EditorComponent extends FluxUiComponent<EditorProps> {
 
   ReactElement _renderPostButton() => Dom.div()(
         (Dom.button()
-          ..className = 'postbutton'
+          ..className = 'et-body__post-button'
           ..onClick = (_) => props.actions.saveDocument())(
           'Send Document',
         ),
       );
 
-  ReactElement _renderBody() => (Dom.div()..className = 'editorbody')(
+  ReactElement _renderBody() => (Dom.div()..className = 'et-body')(
         props.store.html,
       );
 }

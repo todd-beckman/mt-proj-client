@@ -10,6 +10,9 @@ class LecternStore extends Store {
   EditorModule _editor;
   ReactElement get editorContent => _editor.components.content();
 
+  FileTreeModule _fileTree;
+  ReactElement get fileTreeContent => _fileTree.components.content();
+
   LecternStore({
     @required LecternActions actions,
     @required AppContext this.appContext,
@@ -21,18 +24,24 @@ class LecternStore extends Store {
         _events = events {
     didDispose.then((_) {
       _actions = null;
-      _events = null;
       _editor = null;
+      _events = null;
+      _fileTree = null;
     });
 
     _editor = new EditorModule(
       appContext: appContext,
       docId: 'an-enigmatic-doc',
     );
+
+    _fileTree = new FileTreeModule(
+      appContext: appContext,
+    );
   }
 
   Future load() async {
     await _editor.load();
+    await _fileTree.load();
     print('loaded');
   }
 }

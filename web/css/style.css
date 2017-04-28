@@ -7,6 +7,9 @@
   display: flex;
   flex-flow: column nowrap; }
 
+.flexbox-block {
+  border: solid black 1px; }
+
 .lt {
   @import url(https://fonts.googleapis.com/css?family=Slabo+27px);
   /*  Lectern top bar
@@ -50,6 +53,45 @@
       background-color: #CCC;
       border-color: #CCC; }
     .lt-top-bar__button:focus {
+      outline-style: inset;
+      outline-color: blue;
+      border-color: #8AA; }
+
+.et-body {
+  flex: 5 5 auto; }
+
+.ft {
+  /*  File Tree <ul>
+      1. No bullet points
+   */
+  /*  File Tree <li>
+      1.
+   */ }
+  .ft-body {
+    flex: 1 1 auto; }
+  .ft-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow-x: hidden;
+    overflow-y: scroll; }
+  .ft-list__file {
+    background-color: #BBB;
+    border: solid 3px #BBB;
+    width: 100%;
+    font-size: 14pt; }
+    .ft-list__file:hover {
+      background-color: #C0C0C0;
+      border-color: #C0C0C0; }
+    .ft-list__file:disabled {
+      color: #666;
+      background-color: #DDD;
+      border-color: #DDD; }
+    .ft-list__file:active {
+      background-color: #CCC;
+      border-color: #CCC; }
+    .ft-list__file:focus {
       outline-style: inset;
       outline-color: blue;
       border-color: #8AA; }

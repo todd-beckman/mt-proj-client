@@ -1,0 +1,58 @@
+&-body {
+  flex: 1 1 auto;
+}
+
+/*  File Tree <ul>
+    1. No bullet points
+ */
+&-list {
+  // 1
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/*  File Tree <li>
+    1.
+ */
+&-list__file{
+
+  // 1
+  background-color: $button-bg-primary;
+  border: solid 3px $button-bg-primary;
+
+  // 2
+  width: 100%;
+
+  font-size: 14pt;
+
+  // 3
+  //  outline: 0;
+
+  &:hover {
+    // 1
+    background-color: $button-bg-hover;
+    border-color: $button-bg-hover;
+  }
+  &:disabled {
+    color: $color-disabled;
+
+    // 1
+    background-color: $button-bg-disabled;
+    border-color: $button-bg-disabled;
+  }
+  &:active {
+    // 1
+    background-color: $button-bg-active;
+    border-color: $button-bg-active;
+  }
+  &:focus{
+    // 3
+    outline-style: inset;
+    outline-color: blue;
+    border-color: $button-focus;
+  }
+}

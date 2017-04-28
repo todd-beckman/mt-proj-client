@@ -6,6 +6,18 @@
   @import 'lectern';
 }
 
+// editor namespace
+.et {
+  @import 'editor';
+}
+
+// filetree namespace
+.ft {
+  @import 'filetree';
+}
+
+
+
 /*  Body
     1. Wrap the site into one page without scrolling
  */

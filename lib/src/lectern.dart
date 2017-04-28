@@ -10,8 +10,9 @@ import 'package:w_module/w_module.dart';
 import 'package:w_flux/w_flux.dart';
 
 import 'app_context.dart';
-import 'flexbox.dart';
 import 'editor.dart';
+import 'file_tree.dart';
+import 'flexbox.dart';
 
 part 'lectern/actions.dart';
 part 'lectern/api.dart';

@@ -12,12 +12,15 @@ class LecternProps extends FluxUiProps<LecternActions, LecternStore> {}
 @Component()
 class LecternComponent extends FluxUiComponent<LecternProps> {
   @override
-  ReactElement render() => Dom.div()(
+  ReactElement render() => (Dom.div()..className = 'lt-body')(
         (TopBar())(
           (TopBarItem())('Some Link'),
           (TopBarItem())('Another One'),
           (TopBarItem())('Shtuff'),
         ),
-        props.store.editorContent,
+        (Container()..className = 'lt-content__wrapper')(
+          props.store.fileTreeContent,
+          props.store.editorContent,
+        ),
       );
 }

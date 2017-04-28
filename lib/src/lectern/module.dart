@@ -2,7 +2,7 @@ part of mtproj.lectern;
 
 /// This [Module] is responsible for the ui environment.
 class LecternModule extends Module {
-  DispatchKey _dispatchKey = new DispatchKey('desk module');
+  DispatchKey _dispatchKey = new DispatchKey('lectern module');
 
   LecternActions _actions;
 

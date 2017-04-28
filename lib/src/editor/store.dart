@@ -39,12 +39,14 @@ class EditorStore extends Store {
   }
 
   Future load() async {
+    /* TODO: load content
     _fetchData();
 
     [
       _actions.loadDocument.listen((_) => _fetchData),
       _actions.saveDocument.listen((_) => _sendDocument),
     ].forEach(manageActionSubscription);
+    */
   }
 
   void _refresh() {

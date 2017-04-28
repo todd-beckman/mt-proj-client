@@ -43,4 +43,19 @@ class FileTreeStore extends Store {
     _isLoaded = false;
     _files = [];
   }
+
+  Future load() async {
+    await loadFileList();
+  }
+
+  // TODO: actually make this hit the server
+  Future loadFileList() async {
+    _files = [
+      new File(displayName: 'Lorem Ipsum', id: '${KeyIncrementer.nextKey}'),
+      new File(displayName: 'A Frog Borg', id: '${KeyIncrementer.nextKey}'),
+      new File(displayName: 'Very Fancy Doc', id: '${KeyIncrementer.nextKey}'),
+      new File(displayName: 'Kung Pao', id: '${KeyIncrementer.nextKey}'),
+    ];
+    trigger();
+  }
 }

@@ -3,6 +3,14 @@ import 'dart:convert';
 import 'package:color/color.dart';
 import 'package:meta/meta.dart' show required;
 
+/// Provides a set of "unique keys"; not thread-safe.
+class KeyIncrementer {
+  static int _key = 0;
+
+  /// Get the next unique id
+  static int get nextKey => _key++;
+}
+
 /// An enumeration of the colors that should be used by MT
 class MTColor {
   Color get color => _color;
