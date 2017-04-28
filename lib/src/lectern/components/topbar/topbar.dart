@@ -14,7 +14,7 @@ class TopBarComponent extends UiComponent<TopBarProps> {
   ReactElement render() {
     var classNameBuilder = new ClassNameBuilder()
       ..addFromProps(props)
-      ..add('lectern__top-bar');
+      ..add('lt-top-bar');
     return (Container()..className = classNameBuilder.toClassName())(
       props.children,
     );

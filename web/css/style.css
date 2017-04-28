@@ -1,5 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Slabo+27px);
-@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
 .flexbox-container {
   display: flex;
   flex-flow: row nowrap; }
@@ -8,51 +7,52 @@
   display: flex;
   flex-flow: column nowrap; }
 
-/*  Lectern top bar
-    1. Pulls right
-    2. Flexible width with minimum sizing
- */
-.lectern__top-bar {
-  align-self: flex-end;
-  margin-left: auto;
-  justify-content: flex-end;
-  flex-wrap: nowrap;
-  max-width: 600px;
-  width: 40%;
-  min-width: 300px; }
-
-/*  Lectern top-bar-item
-    1. Items are the same size
- */
-.lectern__top-bar-item {
-  flex-grow: 2;
-  flex-basis: 0; }
-
-/*  Lectern button
-    1. Border the same color as the button background
-    2. Button fills the whole top-bar-item container
-    3. Focus draws a border not an outline
- */
-.lectern__top-bar-button {
-  padding: 5px 2px 5px 2px;
-  background-color: #BBB;
-  border: solid 3px #BBB;
-  margin: 0;
-  display: inline;
-  width: 100%;
-  outline: none; }
-  .lectern__top-bar-button:hover {
-    background-color: #C0C0C0;
-    border-color: #C0C0C0; }
-  .lectern__top-bar-button:disabled {
-    color: #666;
-    background-color: #DDD;
-    border-color: #DDD; }
-  .lectern__top-bar-button:active {
-    background-color: #CCC;
-    border-color: #CCC; }
-  .lectern__top-bar-button:focus {
-    border-color: #8AA; }
+.lt {
+  @import url(https://fonts.googleapis.com/css?family=Slabo+27px);
+  /*  Lectern top bar
+      1. Pulls right
+      2. Flexible width with minimum sizing
+   */
+  /*  Lectern top-bar-item
+      1. Items are the same size
+   */
+  /*  Lectern button
+      1. Border the same color as the button background
+      2. Button fills the whole top-bar-item container
+      3. Focus draws a border not an outline
+   */ }
+  .lt-top-bar {
+    align-self: flex-end;
+    margin-left: auto;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    max-width: 600px;
+    width: 40%;
+    min-width: 300px; }
+  .lt-top-bar__item {
+    flex-grow: 2;
+    flex-basis: 0; }
+  .lt-top-bar__button {
+    padding: 5px 2px 5px 2px;
+    text-align: center;
+    background-color: #BBB;
+    border: solid 3px #BBB;
+    width: 100%;
+    font-size: 14pt; }
+    .lt-top-bar__button:hover {
+      background-color: #C0C0C0;
+      border-color: #C0C0C0; }
+    .lt-top-bar__button:disabled {
+      color: #666;
+      background-color: #DDD;
+      border-color: #DDD; }
+    .lt-top-bar__button:active {
+      background-color: #CCC;
+      border-color: #CCC; }
+    .lt-top-bar__button:focus {
+      outline-style: inset;
+      outline-color: blue;
+      border-color: #8AA; }
 
 /*  Body
     1. Wrap the site into one page without scrolling
@@ -68,7 +68,19 @@ body {
   overflow: hidden;
   min-width: 800px; }
 
+button {
+  font-family: "Slabo 27px", serif; }
+
 a:link, a:active, a:visited {
   color: #ddd; }
 a:hover {
   color: #fcc; }
+
+a, a:active, a:focus,
+button, button:focus, button:active,
+.btn, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn.focus:active, .btn.active.focus {
+  outline: none;
+  outline: 0; }
+
+div {
+  box-sizing: border-box; }

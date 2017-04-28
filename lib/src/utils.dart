@@ -16,9 +16,19 @@ class MTColor {
 }
 
 String encodeBase64ForUrl(String input) {
-  return UTF8.fuse(BASE64).encode(input).replaceAll('+', '-').replaceAll('/', '_').replaceAll('=', '~');
+  return UTF8
+      .fuse(BASE64)
+      .encode(input)
+      .replaceAll('+', '-')
+      .replaceAll('/', '_')
+      .replaceAll('=', '~');
 }
 
 String encodeBase64FromUrl(String input) {
-  return UTF8.fuse(BASE64).decode(input).replaceAll('-', '+').replaceAll('_', '/').replaceAll('~', '=');
+  return UTF8
+      .fuse(BASE64)
+      .decode(input)
+      .replaceAll('-', '+')
+      .replaceAll('_', '/')
+      .replaceAll('~', '=');
 }

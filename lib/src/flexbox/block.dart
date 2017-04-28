@@ -16,6 +16,7 @@ class BlockComponent extends UiComponent<BlockProps> {
     var classNameBuilder = new ClassNameBuilder()
       ..addFromProps(copyUnconsumedProps())
       ..add('flexbox-block');
-    return (Dom.div()..className = classNameBuilder.toClassName())(props.children);
+    return (Dom.div()
+      ..className = classNameBuilder.toClassName())(props.children);
   }
 }

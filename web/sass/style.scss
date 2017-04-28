@@ -1,6 +1,10 @@
 @import 'const';
 @import 'flexbox';
-@import 'lectern';
+
+// lectern namespace
+.lt {
+  @import 'lectern';
+}
 
 /*  Body
     1. Wrap the site into one page without scrolling
@@ -19,6 +23,10 @@ body{
   min-width: 800px;
 }
 
+button{
+  font-family: "Slabo 27px", serif;
+}
+
 a {
   &:link,
   &:active,
@@ -28,4 +36,19 @@ a {
   &:hover{
     color:#fcc;
   }
+}
+
+
+// Mozilla puts two outlines and only lets customizing one. Remove the Mozilla-specific second one.
+a, a:active, a:focus,
+button, button:focus, button:active,
+.btn, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn.focus:active, .btn.active.focus {
+  outline: none;
+  outline: 0;
+}
+
+
+// Border and padding computed in width/height automatically
+div {
+  box-sizing: border-box;
 }

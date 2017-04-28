@@ -18,7 +18,9 @@ class ContainerComponent extends UiComponent {
   ReactElement render() {
     var classNameBuilder = new ClassNameBuilder()
       ..addFromProps(copyUnconsumedProps())
-      ..add(props.vertical ? 'flexbox-container-vertical' : 'flexbox-container');
-    return (Dom.div()..className = classNameBuilder.toClassName())(props.children);
+      ..add(
+          props.vertical ? 'flexbox-container-vertical' : 'flexbox-container');
+    return (Dom.div()
+      ..className = classNameBuilder.toClassName())(props.children);
   }
 }

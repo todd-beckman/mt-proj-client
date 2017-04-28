@@ -2,7 +2,6 @@ library mtproj.editor;
 
 import 'dart:async';
 
-import 'package:http/browser_client.dart' as http;
 import 'package:meta/meta.dart' show required;
 import 'package:over_react/over_react.dart';
 import 'package:react/react_client.dart';

@@ -4,9 +4,7 @@ part of mtproj.lectern;
 UiFactory<TopBarItemProps> TopBarItem;
 
 @Props()
-class TopBarItemProps extends UiProps {
-  MouseEventCallback onClick;
-}
+class TopBarItemProps extends UiProps {}
 
 @Component()
 class TopBarItemComponent extends UiComponent<TopBarItemProps> {
@@ -14,10 +12,10 @@ class TopBarItemComponent extends UiComponent<TopBarItemProps> {
   ReactElement render() {
     var classNameBuilder = new ClassNameBuilder()
       ..addFromProps(props)
-      ..add('lectern__top-bar-item');
+      ..add('lt-top-bar__item');
     return (Block()..className = classNameBuilder.toClassName())(
       (Dom.button()
-        ..className = 'lectern__top-bar-button'
+        ..className = 'lt-top-bar__button'
         ..onClick = props.onClick)(
         props.children,
       ),

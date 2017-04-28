@@ -4,7 +4,9 @@ part of mtproj.editor;
 class EditorMessenger extends Messenger {
   EditorMessenger(Environment environment) : super(environment);
 
-  Future<String> fetchData(String docId) async => get('/doc/${encodedBase64ForUrl(docId)}');
+  Future<String> fetchData(String docId) async =>
+      get('/doc/${encodeBase64ForUrl(docId)}');
 
-  Future<String> putData(String docId, String data) async => post('/doc/${encodeBase64ForUrl(docId)}', data);
+  Future<String> putData(String docId, String data) async =>
+      post('/doc/${encodeBase64ForUrl(docId)}', data);
 }

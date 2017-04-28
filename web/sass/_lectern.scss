@@ -5,7 +5,7 @@
     1. Pulls right
     2. Flexible width with minimum sizing
  */
-.lectern__top-bar {
+&-top-bar {
   // 1
   align-self: flex-end;
   margin-left: auto;
@@ -21,7 +21,7 @@
 /*  Lectern top-bar-item
     1. Items are the same size
  */
-.lectern__top-bar-item {
+&-top-bar__item {
   // 1
   flex-grow: 2;
   flex-basis: 0;
@@ -32,20 +32,21 @@
     2. Button fills the whole top-bar-item container
     3. Focus draws a border not an outline
  */
-.lectern__top-bar-button {
+&-top-bar__button {
   padding: 5px 2px 5px 2px;
+  text-align: center;
 
   // 1
   background-color: $button-bg-primary;
   border: solid 3px $button-bg-primary;
 
   // 2
-  margin: 0;
-  display: inline;
   width: 100%;
 
+  font-size: 14pt;
+
   // 3
-  outline: none;
+//  outline: 0;
 
   &:hover {
     // 1
@@ -66,6 +67,8 @@
   }
   &:focus{
     // 3
+    outline-style: inset;
+    outline-color: blue;
     border-color: $button-focus;
   }
 }
