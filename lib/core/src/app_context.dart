@@ -1,4 +1,9 @@
+import 'dart:async';
+
 import 'package:meta/meta.dart' show required;
+
+import 'messenger.dart';
+import 'session.dart';
 
 // An enumeration of the environment type
 class Environment {
@@ -21,15 +26,36 @@ class Environment {
 
   /// The default environment configuration for a local environment
   static final Environment LOCAL =
-      new Environment(docServer: 'http://127.0.0.1:5080');
+      new Environment(docServer: 'ws://127.0.0.1:5080/ws');
 }
 
-// TODO in the future try to fetch this from the environment
-// For now just use hard-coded for dev
 class AppContext {
   final Environment environment;
 
+  Session get session => _session;
+  Session _session;
+
+  Messenger get messenger => _messenger;
+  Messenger _messenger;
+
+  bool _isLoaded = false;
+
   AppContext({
     @required Environment this.environment,
-  });
+  }) {
+    _session = new Session(userId: 'some-user-id');
+    _messenger = new Messenger(
+      environment: environment,
+      session: session,
+    );
+  }
+
+  Future<Null> load() async {
+    if (_isLoaded) {
+      print('Context already loaded!');
+      return;
+    }
+
+    await _messenger.load();
+  }
 }

@@ -1,12 +1,12 @@
 &-body {
   flex: 1 1 auto;
+
+  .flexbox-block {
+    border: none;
+  }
 }
 
-/*  File Tree <ul>
-    1. No bullet points
- */
-&-list {
-  // 1
+&-file__list {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -15,44 +15,21 @@
   overflow-y: scroll;
 }
 
-/*  File Tree <li>
-    1.
- */
-&-list__file{
-
-  // 1
-  background-color: $button-bg-primary;
-  border: solid 3px $button-bg-primary;
-
-  // 2
-  width: 100%;
-
-  font-size: 14pt;
-
-  // 3
-  //  outline: 0;
-
+&-file__name {
+  flex: none;
   &:hover {
-    // 1
     background-color: $button-bg-hover;
-    border-color: $button-bg-hover;
   }
-  &:disabled {
-    color: $color-disabled;
+}
 
-    // 1
-    background-color: $button-bg-disabled;
-    border-color: $button-bg-disabled;
-  }
-  &:active {
-    // 1
-    background-color: $button-bg-active;
-    border-color: $button-bg-active;
-  }
-  &:focus{
-    // 3
-    outline-style: inset;
-    outline-color: blue;
-    border-color: $button-focus;
-  }
+&-file-name__padding {
+  width: 10px;
+}
+
+&-file-name__content {
+  font-size: 14pt;
+}
+
+&-file-list__container {
+  margin: 0;
 }

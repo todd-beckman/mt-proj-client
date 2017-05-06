@@ -5,9 +5,9 @@ class EditorEvents extends EventsCollection {
   final Event onSentDocument;
 
   EditorEvents(DispatchKey dispatchKey)
-      : super(dispatchKey),
-        onDocumentLoaded = new Event(dispatchKey),
-        onSentDocument = new Event(dispatchKey) {
+      : onDocumentLoaded = new Event(dispatchKey),
+        onSentDocument = new Event(dispatchKey),
+        super(dispatchKey) {
     [
       onDocumentLoaded,
       onSentDocument,

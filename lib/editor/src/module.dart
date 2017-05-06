@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:meta/meta.dart' show required;
 import 'package:w_module/w_module.dart';
 
-import 'package:mtproj/common_util/utils.dart';
+import 'package:mtproj/common_ui/mt_skin.dart';
 import 'package:mtproj/core/core.dart';
 
 import 'api.dart';
@@ -49,7 +49,7 @@ class EditorModule extends Module {
   }
 
   @override
-  Future load() async {
+  Future<Null> load() async {
     await _store.load();
   }
 }

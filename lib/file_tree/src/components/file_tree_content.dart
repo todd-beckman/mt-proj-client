@@ -4,7 +4,8 @@ import 'package:react/react_client.dart';
 import 'package:mtproj/common_ui/flexbox.dart';
 import 'package:mtproj/file_tree/src/api.dart';
 import 'package:mtproj/file_tree/src/store.dart';
-import 'package:mtproj/file_tree/src/models.dart';
+
+import 'file_node.dart';
 
 @Factory()
 UiFactory<FileTreeProps> FileTree;
@@ -15,17 +16,18 @@ class FileTreeProps extends FluxUiProps<FileTreeActions, FileTreeStore> {}
 @Component()
 class FileTreeComponent extends FluxUiComponent<FileTreeProps> {
   @override
-  ReactElement render() => (Block()..className = 'ft-body')(
-        (Dom.ul()..className = 'ft-list')(
-          _renderItems(),
-        ),
-      );
+  ReactElement render() {
+    ReactElement body;
+    if (props.store.isLoaded) {
+      body = (FileNode()..file = props.store.root)();
+    } else {
+      body = Dom.p()('Loading...');
+    }
 
-  _renderItems() => props.store.files.map(
-        (File file) => (Dom.li()
-              ..key = file.id
-              ..className = 'ft-list__file')(
-              file.displayName,
-            ),
-      );
+    return (Block()..className = 'ft-body')(
+      (Container()..vertical = true)(
+        body,
+      ),
+    );
+  }
 }

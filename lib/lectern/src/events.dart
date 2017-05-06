@@ -4,8 +4,8 @@ class LecternEvents extends EventsCollection {
   final Event onDocumentLoaded;
 
   LecternEvents(DispatchKey dispatchKey)
-      : super(dispatchKey),
-        onDocumentLoaded = new Event(dispatchKey) {
+      : onDocumentLoaded = new Event(dispatchKey),
+        super(dispatchKey) {
     [
       onDocumentLoaded,
     ].forEach(manageEvent);

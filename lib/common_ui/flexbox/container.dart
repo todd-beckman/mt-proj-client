@@ -11,7 +11,7 @@ class ContainerProps extends UiProps {
 }
 
 @Component()
-class ContainerComponent extends UiComponent {
+class ContainerComponent extends UiComponent<ContainerProps> {
   @override
   ContainerProps getDefaultProps() => newProps()..vertical = false;
 

@@ -60,41 +60,27 @@
 .et-body {
   flex: 5 5 auto; }
 
-.ft {
-  /*  File Tree <ul>
-      1. No bullet points
-   */
-  /*  File Tree <li>
-      1.
-   */ }
-  .ft-body {
-    flex: 1 1 auto; }
-  .ft-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    overflow-x: hidden;
-    overflow-y: scroll; }
-  .ft-list__file {
-    background-color: #BBB;
-    border: solid 3px #BBB;
-    width: 100%;
-    font-size: 14pt; }
-    .ft-list__file:hover {
-      background-color: #C0C0C0;
-      border-color: #C0C0C0; }
-    .ft-list__file:disabled {
-      color: #666;
-      background-color: #DDD;
-      border-color: #DDD; }
-    .ft-list__file:active {
-      background-color: #CCC;
-      border-color: #CCC; }
-    .ft-list__file:focus {
-      outline-style: inset;
-      outline-color: blue;
-      border-color: #8AA; }
+.ft-body {
+  flex: 1 1 auto; }
+  .ft-body .flexbox-block {
+    border: none; }
+.ft-file__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow-x: hidden;
+  overflow-y: scroll; }
+.ft-file__name {
+  flex: none; }
+  .ft-file__name:hover {
+    background-color: #C0C0C0; }
+.ft-file-name__padding {
+  width: 10px; }
+.ft-file-name__content {
+  font-size: 14pt; }
+.ft-file-list__container {
+  margin: 0; }
 
 /*  Body
     1. Wrap the site into one page without scrolling

@@ -11,7 +11,6 @@ import 'store.dart';
 
 import 'components/lectern_content.dart';
 
-
 /// This [Module] is responsible for the ui environment.
 class LecternModule extends Module {
   DispatchKey _dispatchKey = new DispatchKey('src module');
@@ -51,9 +50,7 @@ class LecternModule extends Module {
   }
 
   @override
-  Future load() async {
-    await _store.load();
-  }
+  Future<Null> load() async => _store.load();
 }
 
 class LecternComponents extends ModuleComponents {

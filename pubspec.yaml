@@ -11,6 +11,9 @@ dependencies:
   w_module: ^1.2.1
   w_flux: ^2.7.0
 
+  mt_api:
+    path: ../mt-proj-server
+
 dev_dependencies:
   dart_dev: ^1.7.3
   dart_style: ^1.0.4

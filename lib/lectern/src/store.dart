@@ -12,7 +12,6 @@ import 'package:mtproj/file_tree/file_tree.dart';
 import 'api.dart';
 import 'events.dart';
 
-
 class LecternStore extends Store {
   LecternActions _actions;
   DispatchKey _dispatchKey;
@@ -51,11 +50,11 @@ class LecternStore extends Store {
     );
   }
 
-  Future load() async {
+  Future<Null> load() async {
     await _editor.load();
     await _fileTree.load();
 
-    _editor.api.loadDocument('a-glorious-doc');
+    //   _editor.api.loadDocument('a-glorious-doc');
     print('loaded');
   }
 }

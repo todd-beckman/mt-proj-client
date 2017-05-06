@@ -49,9 +49,7 @@ class FileTreeModule extends Module {
   }
 
   @override
-  Future load() async {
-    _store.load();
-  }
+  Future<Null> load() => _store.load();
 }
 
 class FileTreeComponents extends ModuleComponents {
