@@ -35,8 +35,10 @@ class FileNodeComponent
   @override
   ReactElement render() {
     var items = <ReactElement>[
-      (Block()..key = 'name'
-        ..className = 'ft-file__name')(
+      (Block()
+        ..key = 'name'
+        ..className = 'ft-file__name'
+        ..onClick = _handleClick)(
         _padName(props.file.name, props._depth),
       ),
     ];
@@ -79,6 +81,22 @@ class FileNodeComponent
         ..style = {
           'paddingLeft': '${depth * NAME_PADDING}px',
         })(
+        _renderExpandedState(),
         name,
       );
+
+  _renderExpandedState() {
+    if (props.file.children?.length == 0) {
+      return '';
+    }
+    if (state.collapsed == true) {
+      return '> ';
+    }
+    return 'v ';
+  }
+
+  _handleClick(e) {
+    print('setting collapsed to ${!state.collapsed}');
+    setState(newState()..collapsed = !state.collapsed);
+  }
 }

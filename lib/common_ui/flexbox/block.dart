@@ -14,10 +14,14 @@ class BlockProps extends UiProps {}
 class BlockComponent extends UiComponent<BlockProps> {
   @override
   ReactElement render() {
+    var childProps = copyUnconsumedProps();
+
     var classNameBuilder = new ClassNameBuilder()
-      ..addFromProps(copyUnconsumedProps())
+      ..addFromProps(childProps)
       ..add('flexbox-block');
+
     return (Dom.div()
+      ..addProps(childProps)
       ..className = classNameBuilder.toClassName())(props.children);
   }
 }

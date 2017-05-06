@@ -1,5 +1,14 @@
+@import 'mixins';
+
+// Adds padding to the bottom of a file name
+@mixin file-name-padding($padding: 3px) {
+  margin: 0 0 $padding 0;
+}
+
 &-body {
-  flex: 1 1 auto;
+  @include disable-select();
+
+  flex: 1 1 150px;
 
   .flexbox-block {
     border: none;
@@ -16,7 +25,11 @@
 }
 
 &-file__name {
+  @include cursor-pointer();
+  @include file-name-padding();
+
   flex: none;
+
   &:hover {
     background-color: $button-bg-hover;
   }
@@ -31,5 +44,5 @@
 }
 
 &-file-list__container {
-  margin: 0;
+  @include file-name-padding();
 }

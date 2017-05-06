@@ -61,7 +61,11 @@
   flex: 5 5 auto; }
 
 .ft-body {
-  flex: 1 1 auto; }
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  flex: 1 1 150px; }
   .ft-body .flexbox-block {
     border: none; }
 .ft-file__list {
@@ -72,6 +76,8 @@
   overflow-x: hidden;
   overflow-y: scroll; }
 .ft-file__name {
+  cursor: pointer;
+  margin: 0 0 3px 0;
   flex: none; }
   .ft-file__name:hover {
     background-color: #C0C0C0; }
@@ -80,7 +86,7 @@
 .ft-file-name__content {
   font-size: 14pt; }
 .ft-file-list__container {
-  margin: 0; }
+  margin: 0 0 3px 0; }
 
 /*  Body
     1. Wrap the site into one page without scrolling
