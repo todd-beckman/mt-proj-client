@@ -17,6 +17,7 @@ class FileTreeProps extends FluxUiProps<FileTreeActions, FileTreeStore> {}
 class FileTreeComponent extends FluxUiComponent<FileTreeProps> {
   @override
   ReactElement render() {
+    print('file tree rendering');
     ReactElement body;
     if (props.store.isLoaded) {
       body = (FileNode()..file = props.store.root)();
@@ -24,10 +25,8 @@ class FileTreeComponent extends FluxUiComponent<FileTreeProps> {
       body = Dom.p()('Loading...');
     }
 
-    return (Block()..className = 'ft-body')(
-      (Container()..vertical = true)(
-        body,
-      ),
+    return (Container()..vertical = true)(
+      body,
     );
   }
 }

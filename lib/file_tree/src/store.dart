@@ -86,7 +86,192 @@ class FileTreeStore extends Store {
             ..children = [],
         ],
       new File()
-        ..id = 'child3'
+        ..id = 'child6'
+        ..name = 'Very Fancy Document'
+        ..children = [],
+      new File()
+        ..id = 'child7'
+        ..name = 'An Enigmatic File'
+        ..children = [],
+      new File()
+        ..id = 'child8'
+        ..name = 'Some Directory'
+        ..children = [
+          new File()
+            ..id = 'nestedchild1'
+            ..name = 'A Nested Doc'
+            ..children = [],
+        ],
+      new File()
+        ..id = 'child9'
+        ..name = 'Very Fancy Document'
+        ..children = [],
+      new File()
+        ..id = 'child10'
+        ..name = 'An Enigmatic File'
+        ..children = [],
+      new File()
+        ..id = 'child11'
+        ..name = 'Some Directory'
+        ..children = [
+          new File()
+            ..id = 'nestedchild1'
+            ..name = 'A Nested Doc'
+            ..children = [],
+        ],
+      new File()
+        ..id = 'child12'
+        ..name = 'Very Fancy Document'
+        ..children = [
+          new File()
+            ..id = 'child16'
+            ..name = 'An Enigmatic File'
+            ..children = [],
+          new File()
+            ..id = 'child17'
+            ..name = 'Some Directory'
+            ..children = [],
+          new File()
+            ..id = 'child18'
+            ..name = 'Very Fancy Document'
+            ..children = [],
+        ],
+      new File()
+        ..id = 'child13'
+        ..name = 'An Enigmatic File'
+        ..children = [
+          new File()
+            ..id = 'child16'
+            ..name = 'An Enigmatic File'
+            ..children = [],
+          new File()
+            ..id = 'child17'
+            ..name = 'Some Directory'
+            ..children = [
+              new File()
+                ..id = 'nestedchild1'
+                ..name = 'A Nested Doc'
+                ..children = [],
+            ],
+          new File()
+            ..id = 'child18'
+            ..name = 'Very Fancy Document'
+            ..children = [],
+        ],
+      new File()
+        ..id = 'child14'
+        ..name = 'Some Directory'
+        ..children = [
+          new File()
+            ..id = 'nestedchild1'
+            ..name = 'A Nested Doc'
+            ..children = [],
+        ],
+      new File()
+        ..id = 'child15'
+        ..name = 'Very Fancy Document'
+        ..children = [],
+      new File()
+        ..id = 'child16'
+        ..name = 'An Enigmatic File'
+        ..children = [],
+      new File()
+        ..id = 'child17'
+        ..name = 'Some Directory'
+        ..children = [
+          new File()
+            ..id = 'nestedchild1'
+            ..name = 'A Nested Doc'
+            ..children = [
+              new File()
+                ..id = 'child16'
+                ..name = 'An Enigmatic File'
+                ..children = [
+                  new File()
+                    ..id = 'nestedchild1'
+                    ..name = 'A Nested Doc'
+                    ..children = [
+                      new File()
+                        ..id = 'child16'
+                        ..name = 'An Enigmatic File'
+                        ..children = [],
+                      new File()
+                        ..id = 'child17'
+                        ..name = 'Some Directory'
+                        ..children = [
+                          new File()
+                            ..id = 'nestedchild1'
+                            ..name = 'A Nested Doc'
+                            ..children = [],
+                        ],
+                      new File()
+                        ..id = 'child18'
+                        ..name = 'Very Fancy Document'
+                        ..children = [],
+                    ],
+                ],
+              new File()
+                ..id = 'child17'
+                ..name = 'Some Directory'
+                ..children = [
+                  new File()
+                    ..id = 'nestedchild1'
+                    ..name = 'A Nested Doc'
+                    ..children = [],
+                ],
+              new File()
+                ..id = 'child18'
+                ..name = 'Very Fancy Document'
+                ..children = [],
+            ],
+          new File()
+            ..id = 'nestedchild'
+            ..name = 'A Nested Doc'
+            ..children = [
+              new File()
+                ..id = 'child16'
+                ..name = 'An Enigmatic File'
+                ..children = [],
+              new File()
+                ..id = 'child17'
+                ..name = 'Some Directory'
+                ..children = [
+                  new File()
+                    ..id = 'nestedchild1'
+                    ..name = 'A Nested Doc'
+                    ..children = [],
+                ],
+              new File()
+                ..id = 'child18'
+                ..name = 'Very Fancy Document'
+                ..children = [
+                  new File()
+                    ..id = 'nestedchild1'
+                    ..name = 'A Nested Doc'
+                    ..children = [
+                      new File()
+                        ..id = 'child16'
+                        ..name = 'An Enigmatic File'
+                        ..children = [],
+                      new File()
+                        ..id = 'child17'
+                        ..name = 'Some Directory'
+                        ..children = [
+                          new File()
+                            ..id = 'nestedchild1'
+                            ..name = 'A Nested Doc'
+                            ..children = [],
+                        ],
+                      new File()
+                        ..id = 'child18'
+                        ..name = 'Very Fancy Document'
+                        ..children = [],
+                    ],
+                ],
+            ],
+        ],
+      new File()
+        ..id = 'child18'
         ..name = 'Very Fancy Document'
         ..children = [],
     ];

@@ -3,9 +3,6 @@ import 'package:over_react/over_react.dart';
 import 'package:react/react_client.dart';
 
 import 'package:mtproj/common_ui/flexbox.dart';
-import 'package:mtproj/common_util/utils.dart';
-import 'package:mtproj/file_tree/src/api.dart';
-import 'package:mtproj/file_tree/src/store.dart';
 
 const NAME_PADDING = 10;
 
@@ -26,6 +23,8 @@ class FileNodeState extends UiState {
 @Component()
 class FileNodeComponent
     extends UiStatefulComponent<FileNodeProps, FileNodeState> {
+  BlockComponent _fileNameRef;
+
   @override
   FileNodeState getInitialState() => newState()..collapsed = false;
 
@@ -38,6 +37,9 @@ class FileNodeComponent
       (Block()
         ..key = 'name'
         ..className = 'ft-file__name'
+        ..ref = ((ref) {
+          _fileNameRef = ref;
+        })
         ..onClick = _handleClick)(
         _padName(props.file.name, props._depth),
       ),
@@ -76,12 +78,14 @@ class FileNodeComponent
     return items;
   }
 
-  ReactElement _padName(String name, int depth) => (Dom.span()
-        ..className = 'ft-file-name__content'
-        ..style = {
-          'paddingLeft': '${depth * NAME_PADDING}px',
-        })(
-        _renderExpandedState(),
+  ReactElement _padName(String name, int depth) =>
+      (Dom.span()..className = 'ft-file-name__content')(
+        (Dom.span()..className = 'ft-file-name__padding')(
+          ' | ' * depth,
+        ),
+        (Dom.span()..className = 'ft-file-name__expand-icon')(
+          _renderExpandedState(),
+        ),
         name,
       );
 
@@ -96,7 +100,6 @@ class FileNodeComponent
   }
 
   _handleClick(e) {
-    print('setting collapsed to ${!state.collapsed}');
     setState(newState()..collapsed = !state.collapsed);
   }
 }

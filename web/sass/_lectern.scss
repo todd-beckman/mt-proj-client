@@ -1,74 +1,20 @@
 @import 'const';
+@import 'mixins';
 
+&-body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
-/*  Lectern top bar
-    1. Pulls right
-    2. Flexible width with minimum sizing
- */
 &-top-bar {
-  // 1
-  align-self: flex-end;
-  margin-left: auto;
-  justify-content: flex-end;
-
-  // 2
-  flex-wrap: nowrap;
-  max-width: 600px;
-  width: 40%;
-  min-width: 300px;
+  @include simple-border-bottom();
 }
 
-/*  Lectern top-bar-item
-    1. Items are the same size
- */
-&-top-bar__item {
-  // 1
-  flex-grow: 2;
-  flex-basis: 0;
+&-content__wrapper {
+  height: 100%;
 }
 
-/*  Lectern button
-    1. Border the same color as the button background
-    2. Button fills the whole top-bar-item container
-    3. Focus draws a border not an outline
- */
-&-top-bar__button {
-  padding: 5px 2px 5px 2px;
-  text-align: center;
-
-  // 1
-  background-color: $button-bg-primary;
-  border: solid 3px $button-bg-primary;
-
-  // 2
-  width: 100%;
-
-  font-size: 14pt;
-
-  // 3
-//  outline: 0;
-
-  &:hover {
-    // 1
-    background-color: $button-bg-hover;
-    border-color: $button-bg-hover;
-  }
-  &:disabled {
-    color: $color-disabled;
-
-    // 1
-    background-color: $button-bg-disabled;
-    border-color: $button-bg-disabled;
-  }
-  &:active {
-    // 1
-    background-color: $button-bg-active;
-    border-color: $button-bg-active;
-  }
-  &:focus{
-    // 3
-    outline-style: inset;
-    outline-color: blue;
-    border-color: $button-focus;
-  }
+&-content__wrapper > .lt-body-wrapper:not(:last-child) {
+  @include simple-border-right()
 }

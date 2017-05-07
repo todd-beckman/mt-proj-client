@@ -9,10 +9,8 @@
   @include disable-select();
 
   flex: 1 1 150px;
-
-  .flexbox-block {
-    border: none;
-  }
+  border-right: solid black 1px;
+  overflow-y: scroll;
 }
 
 &-file__list {
@@ -36,13 +34,19 @@
 }
 
 &-file-name__padding {
-  width: 10px;
+  padding-left: 5pt;
+  letter-spacing: 5pt;
+  color: $color-disabled;
 }
 
 &-file-name__content {
+  text-overflow: clip;
   font-size: 14pt;
 }
 
+&-file-name__expand-icon {
+  width: 10px;
+}
+
 &-file-list__container {
-  @include file-name-padding();
 }

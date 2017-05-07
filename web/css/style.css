@@ -7,55 +7,18 @@
   display: flex;
   flex-flow: column nowrap; }
 
-.flexbox-block {
-  border: solid black 1px; }
-
 .lt {
-  @import url(https://fonts.googleapis.com/css?family=Slabo+27px);
-  /*  Lectern top bar
-      1. Pulls right
-      2. Flexible width with minimum sizing
-   */
-  /*  Lectern top-bar-item
-      1. Items are the same size
-   */
-  /*  Lectern button
-      1. Border the same color as the button background
-      2. Button fills the whole top-bar-item container
-      3. Focus draws a border not an outline
-   */ }
+  @import url(https://fonts.googleapis.com/css?family=Slabo+27px); }
+  .lt-body {
+    height: 100%;
+    margin: 0;
+    padding: 0; }
   .lt-top-bar {
-    align-self: flex-end;
-    margin-left: auto;
-    justify-content: flex-end;
-    flex-wrap: nowrap;
-    max-width: 600px;
-    width: 40%;
-    min-width: 300px; }
-  .lt-top-bar__item {
-    flex-grow: 2;
-    flex-basis: 0; }
-  .lt-top-bar__button {
-    padding: 5px 2px 5px 2px;
-    text-align: center;
-    background-color: #BBB;
-    border: solid 3px #BBB;
-    width: 100%;
-    font-size: 14pt; }
-    .lt-top-bar__button:hover {
-      background-color: #C0C0C0;
-      border-color: #C0C0C0; }
-    .lt-top-bar__button:disabled {
-      color: #666;
-      background-color: #DDD;
-      border-color: #DDD; }
-    .lt-top-bar__button:active {
-      background-color: #CCC;
-      border-color: #CCC; }
-    .lt-top-bar__button:focus {
-      outline-style: inset;
-      outline-color: blue;
-      border-color: #8AA; }
+    border-bottom: solid black 1px; }
+  .lt-content__wrapper {
+    height: 100%; }
+  .lt-content__wrapper > .lt-body-wrapper:not(:last-child) {
+    border-right: solid black 1px; }
 
 .et-body {
   flex: 5 5 auto; }
@@ -65,9 +28,9 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  flex: 1 1 150px; }
-  .ft-body .flexbox-block {
-    border: none; }
+  flex: 1 1 150px;
+  border-right: solid black 1px;
+  overflow-y: scroll; }
 .ft-file__list {
   list-style-type: none;
   margin: 0;
@@ -82,25 +45,24 @@
   .ft-file__name:hover {
     background-color: #C0C0C0; }
 .ft-file-name__padding {
-  width: 10px; }
+  padding-left: 5pt;
+  letter-spacing: 5pt;
+  color: #666; }
 .ft-file-name__content {
+  text-overflow: clip;
   font-size: 14pt; }
-.ft-file-list__container {
-  margin: 0 0 3px 0; }
+.ft-file-name__expand-icon {
+  width: 10px; }
 
-/*  Body
-    1. Wrap the site into one page without scrolling
- */
 body {
-  font-family: "Slabo 27px", serif;
-  color: #000;
-  background-color: #CCC;
-  font-size: 14pt;
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  min-width: 800px; }
+  background-color: #CCC;
+  color: #000;
+  min-width: 800px;
+  font-family: "Slabo 27px", serif;
+  font-size: 14pt; }
 
 button {
   font-family: "Slabo 27px", serif; }
@@ -118,3 +80,8 @@ button, button:focus, button:active,
 
 div {
   box-sizing: border-box; }
+
+.body {
+  height: 100%;
+  margin: 0;
+  padding: 0; }

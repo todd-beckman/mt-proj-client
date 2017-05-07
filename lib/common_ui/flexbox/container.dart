@@ -17,11 +17,14 @@ class ContainerComponent extends UiComponent<ContainerProps> {
 
   @override
   ReactElement render() {
+    var childProps = copyUnconsumedProps();
     var classNameBuilder = new ClassNameBuilder()
-      ..addFromProps(copyUnconsumedProps())
+      ..addFromProps(childProps)
       ..add(
           props.vertical ? 'flexbox-container-vertical' : 'flexbox-container');
+
     return (Dom.div()
+      ..addProps(childProps)
       ..className = classNameBuilder.toClassName())(props.children);
   }
 }

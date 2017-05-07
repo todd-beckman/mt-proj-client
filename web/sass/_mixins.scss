@@ -8,3 +8,18 @@
   -ms-user-select: none;
   user-select: none;
 }
+
+@mixin full-size() {
+  height: 100%;
+  margin: 0;
+//  overflow: hidden;
+  padding: 0;
+}
+
+@mixin simple-border-bottom($color: black, $stroke: 1px) {
+  border-bottom: solid $color $stroke;
+}
+
+@mixin simple-border-right($color: black, $stroke: 1px) {
+  border-right: solid $color $stroke;
+}
