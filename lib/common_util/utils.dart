@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:logging/logging.dart';
+
 /// Provides a set of "unique keys"; not thread-safe.
 class KeyIncrementer {
   static int _key = 0;
@@ -24,4 +26,8 @@ String encodeBase64FromUrl(String input) {
       .replaceAll('-', '+')
       .replaceAll('_', '/')
       .replaceAll('~', '=');
+}
+
+Logger newLogger(String name) {
+  return new Logger('mt.$name');
 }

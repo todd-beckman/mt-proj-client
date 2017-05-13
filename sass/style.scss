@@ -17,6 +17,11 @@
   @import 'filetree';
 }
 
+// window framework namespace
+.main {
+  @import 'region';
+}
+
 body{
   @include full-size();
 

@@ -20,11 +20,11 @@ class LecternComponent extends FluxUiComponent<LecternProps> {
   ReactElement render() => (Dom.div()..className = 'lt-body')(
         (Container()..className = 'lt-content__wrapper')(
           (Block()..className = 'lt-body-wrapper ft-body')(
-            props.store.fileTreeContent,
-          ),
+              //props.store.fileTreeContent,
+              ),
           (Block()..className = 'lt-body-wrapper et-body')(
-            props.store.editorContent,
-          ),
+//            props.store.editorContent,
+              ),
         ),
       );
 }

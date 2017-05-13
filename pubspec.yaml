@@ -5,6 +5,7 @@ author: todd beckman
 dependencies:
   browser: ^0.10.0
   color: ^2.0.1
+  logging: ^0.11.3
   over_react: ^1.8.0
   uuid: ^0.5.3
   w_common: ^1.4.1

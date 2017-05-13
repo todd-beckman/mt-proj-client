@@ -7,7 +7,8 @@ import 'package:thrift/thrift_browser.dart';
 import 'package:uuid/uuid.dart';
 import 'package:w_common/w_common.dart';
 
-import 'app_context.dart';
+import 'environment.dart';
+import 'logging.dart';
 import 'session.dart';
 
 class Messenger extends Disposable {
@@ -34,7 +35,7 @@ class Messenger extends Disposable {
       // TODO: make this work
       //await _initConnection();
     } catch (e) {
-      print(e);
+      log.severe(e);
       return;
     }
 
@@ -43,7 +44,7 @@ class Messenger extends Disposable {
 
   void _initConnection() {
     _transport = new TAsyncClientSocketTransport(
-      new TWebSocket(Uri.parse(_environment.docServer)),
+      new TWebSocket(Uri.parse(urlForEnvironment[_environment])),
       new TMessageReader(new TBinaryProtocolFactory()),
     );
     var protocol = new TBinaryProtocol(_transport);
@@ -56,6 +57,14 @@ class Messenger extends Disposable {
     ..correlationId = '[${_uuid.v4()}] ${_session.userId} - $method'
     ..userId = _session.userId;
 
-  Future<api.File> getFileTree(String projectId) =>
+  /// Sends a server API request to get the project list for a user
+  Future<Map<String, api.Project>> getProjectListForUser() =>
+      _client.getProjectListForUser(_makeContext('getProjectListForUser'));
+
+  /// Sends a server API request to get a file tree
+  Future<api.FileMeta> getFileTree(String projectId) =>
       _client.getFileTreeForProject(_makeContext('getFileTree'), projectId);
+
+  Future<String> getFileContent(String fileId) =>
+      _client.getFileContent(_makeContext('getFileContent'), fileId);
 }

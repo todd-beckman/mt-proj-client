@@ -1,4 +1,4 @@
-import 'package:mt_api/mt_api.dart';
+import 'package:mt_api/mt_api.dart' as api;
 import 'package:over_react/over_react.dart';
 import 'package:react/react_client.dart';
 
@@ -11,35 +11,39 @@ UiFactory<FileNodeProps> FileNode;
 
 @Props()
 class FileNodeProps extends UiProps {
-  File file;
+  api.FileMeta file;
   int _depth;
 }
 
 @State()
 class FileNodeState extends UiState {
+  bool active;
   bool collapsed;
 }
 
 @Component()
 class FileNodeComponent
     extends UiStatefulComponent<FileNodeProps, FileNodeState> {
-  BlockComponent _fileNameRef;
+  // Track the time to detect a double click
+  DateTime _timeSinceClick;
 
   @override
-  FileNodeState getInitialState() => newState()..collapsed = false;
+  FileNodeState getInitialState() => newState()
+    ..active = false
+    ..collapsed = false;
 
   @override
   FileNodeProps getDefaultProps() => newProps().._depth = 0;
 
   @override
   ReactElement render() {
+    var fileNameClassBuilder = new ClassNameBuilder()
+      ..add('ft-file__name')
+      ..add('active', state.active);
     var items = <ReactElement>[
       (Block()
         ..key = 'name'
-        ..className = 'ft-file__name'
-        ..ref = ((ref) {
-          _fileNameRef = ref;
-        })
+        ..className = fileNameClassBuilder.toClassName()
         ..onClick = _handleClick)(
         _padName(props.file.name, props._depth),
       ),
@@ -61,10 +65,10 @@ class FileNodeComponent
     );
   }
 
-  List<ReactElement> _renderFileList(File file, int depth) {
+  List<ReactElement> _renderFileList(api.FileMeta file, int depth) {
     var items = <ReactElement>[];
 
-    file.children.forEach((File file) {
+    file.children.forEach((api.FileMeta file) {
       items.add(
         (Block()
           ..key = file.id
@@ -99,7 +103,9 @@ class FileNodeComponent
     return 'v ';
   }
 
-  _handleClick(e) {
+  _handleClick(e) {}
+
+  _handleExpandOrCollapse(e) {
     setState(newState()..collapsed = !state.collapsed);
   }
 }

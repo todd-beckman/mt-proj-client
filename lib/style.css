@@ -44,6 +44,8 @@
   flex: none; }
   .ft-file__name:hover {
     background-color: #C0C0C0; }
+  .ft-file__name.selected {
+    background-color: #0C8; }
 .ft-file-name__padding {
   padding-left: 5pt;
   letter-spacing: 5pt;
@@ -54,9 +56,26 @@
 .ft-file-name__expand-icon {
   width: 10px; }
 
+.main {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding: 0; }
+.main-head, .main-foot {
+  background-color: #CCCCCC; }
+.main-left {
+  overflow: scroll;
+  background-color: #CC8080; }
+.main-body {
+  background-color: #80CC80; }
+.main-right {
+  overflow: scroll;
+  background-color: #8080CC; }
+
 body {
   height: 100%;
   margin: 0;
+  overflow: hidden;
   padding: 0;
   background-color: #CCC;
   color: #000;
@@ -84,4 +103,5 @@ div {
 .body {
   height: 100%;
   margin: 0;
+  overflow: hidden;
   padding: 0; }

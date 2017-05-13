@@ -12,8 +12,8 @@ main(List<String> args) async {
   // config.copyLicense
   // config.coverage
   // config.docs
-  // config.examples
-  config.format..directories = ['lib', 'web'];
+  // config.example
+  config.format..directories = ['example', 'lib', 'web'];
   // config.test
 
   await dev(args);

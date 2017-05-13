@@ -1,12 +1,10 @@
 import 'package:w_common/w_common.dart';
 import 'package:w_flux/w_flux.dart';
 
-import 'package:mt_api/mt_api.dart';
+import 'package:mt_api/mt_api.dart' as api;
 
 /// The external API
-class FileTreeApi extends Disposable {
-  Map<String, File> getFileById;
-}
+class FileTreeApi extends Disposable {}
 
 /// The internal API for the Flux cycle
 class FileTreeActions extends Disposable {

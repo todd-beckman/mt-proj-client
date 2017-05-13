@@ -1,0 +1,24 @@
+@import 'mixins';
+
+& {
+  @include full-size()
+}
+
+&-head, &-foot {
+  background-color: #CCCCCC;
+}
+
+&-left {
+  overflow: scroll;
+  background-color: #CC8080;
+}
+
+&-body {
+  background-color: #80CC80;
+}
+
+&-right{
+  overflow: scroll;
+  background-color: #8080CC;
+}
+
