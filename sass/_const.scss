@@ -1,15 +1,31 @@
-@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
+// I like this font but the load times T_T
+//@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
 
 // The body background
-$background: #CCC;
-
-// Text styling
-$color-primary: #000;
-$color-disabled: #666;
+$background: #CCCCCC;
 
 // Button styling
-$button-bg-primary: #BBB;
-$button-bg-active: #0C8;
-$button-bg-disabled: #DDD;
+$button-bg-primary: #BBBBBB;
+$button-bg-active: #00CC88;
+$button-bg-disabled: #DDDDDD;
 $button-bg-hover: #C0C0C0;
-$button-focus: #8AB;
+$button-focus: #88AABB;
+
+// Text styling
+$color-primary: #000000;
+$color-disabled: #666666;
+
+$body-background: #EEEEEE;
+
+$header-size: 4rem;
+
+$tall-toolbar-size: 2rem;
+
+$panel-background-color: $background;
+
+$resize_bar_border_color: #BBBBBB;
+$resize_bar_boundary: 0.24rem solid $resize_bar_border_color;
+$resize_bar_stroke_color: #888888;
+$resize_bar_width: 0.5rem;
+
+

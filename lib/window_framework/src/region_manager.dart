@@ -8,7 +8,7 @@ import 'content.dart';
 
 /// The region to put the [Content] on the page.
 ///
-/// [HEAD] and [FOOT] take up full width and are anchored to top and bottom.
+/// [HEAD] is a full-width header.
 /// [LEFT], [BODY], and [RIGHT] fill the rest of the height and divide width
 /// amongs themselves.
 enum RegionLocation {
@@ -16,7 +16,6 @@ enum RegionLocation {
   LEFT,
   BODY,
   RIGHT,
-  FOOT,
 }
 
 String classNameForLocation(RegionLocation location) {
@@ -29,8 +28,6 @@ String classNameForLocation(RegionLocation location) {
       return 'reg-body';
     case RegionLocation.RIGHT:
       return 'reg-right';
-    case RegionLocation.FOOT:
-      return 'reg-foot';
     default:
       return '';
   }

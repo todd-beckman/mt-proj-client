@@ -1,4 +1,3 @@
-
 import 'package:mtproj/window_framework/window_framework.dart';
 import 'package:w_module/w_module.dart';
 import 'package:over_react/over_react.dart';
@@ -7,24 +6,35 @@ class MockWindowManager extends WindowManager {
   SampleModule module;
 
   MockWindowManager({
-    List<RegionLocation> withoutRegions,
+    Content head,
+    Content left,
+    Content body,
+    Content right,
   }) {
     module = new SampleModule();
 
-    if (!withoutRegions.contains(RegionLocation.HEAD)) {
+    if (head == null) {
       addDummyContent(RegionLocation.HEAD);
+    } else {
+      addContent(head, RegionLocation.HEAD);
     }
-    if (!withoutRegions.contains(RegionLocation.LEFT)) {
+
+    if (left == null) {
       addDummyContent(RegionLocation.LEFT);
+    } else {
+      addContent(left, RegionLocation.LEFT);
     }
-    if (!withoutRegions.contains(RegionLocation.BODY)) {
+
+    if (body == null) {
       addDummyContent(RegionLocation.BODY);
+    } else {
+      addContent(body, RegionLocation.BODY);
     }
-    if (!withoutRegions.contains(RegionLocation.RIGHT)) {
+
+    if (right == null) {
       addDummyContent(RegionLocation.RIGHT);
-    }
-    if (!withoutRegions.contains(RegionLocation.FOOT)) {
-      addDummyContent(RegionLocation.FOOT);
+    } else {
+      addContent(right, RegionLocation.RIGHT);
     }
   }
 
@@ -53,11 +63,12 @@ class SampleEvents extends EventsCollection {
 }
 
 class SampleComponents extends ModuleComponents {
+  var phrase =
+      'The big black bug bit the big black bear and the big black bear bled blood. ';
   @override
-  ReactElement content() => Dom.div()(
-    Dom.p()(
-      'The big black bug bit the big black bear and the big black bear bled blood. ' *
-          20,
-    ),
-  );
+  ReactElement content() => (Dom.div()..key = 'content')(
+        Dom.p()(
+          phrase * 30,
+        ),
+      );
 }

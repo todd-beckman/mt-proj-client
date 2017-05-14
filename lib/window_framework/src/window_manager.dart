@@ -16,7 +16,6 @@ class WindowManager extends Disposable {
       _leftManager = new RegionManager(),
       _bodyManager = new RegionManager(),
       _rightManager = new RegionManager(),
-      _footManager = new RegionManager(),
     ].forEach(manageDisposable);
   }
 
@@ -24,7 +23,6 @@ class WindowManager extends Disposable {
   RegionManager _leftManager;
   RegionManager _bodyManager;
   RegionManager _rightManager;
-  RegionManager _footManager;
 
   void addContent(Content content, RegionLocation location) {
     switch (location) {
@@ -40,9 +38,6 @@ class WindowManager extends Disposable {
       case RegionLocation.RIGHT:
         _rightManager.addContent(content);
         break;
-      case RegionLocation.FOOT:
-        _footManager.addContent(content);
-        break;
     }
   }
 
@@ -50,6 +45,5 @@ class WindowManager extends Disposable {
     ..head = _headManager
     ..left = _leftManager
     ..body = _bodyManager
-    ..right = _rightManager
-    ..foot = _footManager)();
+    ..right = _rightManager)();
 }

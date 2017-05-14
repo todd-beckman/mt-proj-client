@@ -24,9 +24,6 @@ class FileNodeState extends UiState {
 @Component()
 class FileNodeComponent
     extends UiStatefulComponent<FileNodeProps, FileNodeState> {
-  // Track the time to detect a double click
-  DateTime _timeSinceClick;
-
   @override
   FileNodeState getInitialState() => newState()
     ..active = false

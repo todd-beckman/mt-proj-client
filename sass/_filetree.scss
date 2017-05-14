@@ -8,8 +8,6 @@
 &-body {
   @include disable-select();
 
-  flex: 1 1 150px;
-  border-right: solid black 1px;
   overflow-y: scroll;
 }
 

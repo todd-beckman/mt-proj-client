@@ -1,3 +1,5 @@
+@import 'const';
+
 @mixin cursor-pointer() {
   cursor: pointer;
 }
@@ -12,8 +14,13 @@
 @mixin full-size() {
   height: 100%;
   margin: 0;
-  overflow: hidden;
   padding: 0;
+}
+
+@mixin body-height() {
+  position: absolute;
+  top: $header-size;
+  bottom: 0;
 }
 
 @mixin simple-border-bottom($color: black, $stroke: 1px) {

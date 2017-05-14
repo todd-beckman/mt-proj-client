@@ -2,9 +2,9 @@
 @import 'flexbox';
 @import 'mixins';
 
-// lectern namespace
-.lt {
-  @import 'lectern';
+// window framework namespace
+.main {
+  @import 'window_framework';
 }
 
 // editor namespace
@@ -17,9 +17,19 @@
   @import 'filetree';
 }
 
-// window framework namespace
-.main {
-  @import 'region';
+// lectern namespace
+.lt {
+  @import 'lectern';
+}
+
+// resize bar namespace
+.rb {
+  @import 'resize_bar';
+}
+
+// tall toolbar namespace
+.ttb {
+  @import 'tall_toolbar';
 }
 
 body{
@@ -28,12 +38,12 @@ body{
   background-color: $background;
   color: $color-primary;
   min-width: 800px;
-  font-family: "Slabo 27px", serif;
-  font-size: 14pt;
+  //font-family: "Slabo 27px", serif;
+  font-size: 62.5%;
 }
 
 button{
-  font-family: "Slabo 27px", serif;
+  //font-family: "Slabo 27px", serif;
 }
 
 a {
@@ -64,4 +74,9 @@ div {
 
 .body {
   @include full-size();
+}
+
+
+p {
+  margin: 0;
 }

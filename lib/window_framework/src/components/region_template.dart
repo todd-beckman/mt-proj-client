@@ -1,9 +1,9 @@
 import 'package:over_react/over_react.dart';
 import 'package:react/react_client.dart';
 
-import 'package:mtproj/common_ui/flexbox.dart';
-
 import '../region_manager.dart';
+
+import 'package:mtproj/common_ui/mt_skin.dart';
 
 @Factory()
 UiFactory<RegionTemplateProps> RegionTemplate;
